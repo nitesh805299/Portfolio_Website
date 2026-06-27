@@ -1,0 +1,129 @@
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 24px;
+  min-height: 100vh;
+  padding: 150px 20px 80px;
+  text-align: center;
+}
+
+.hero-glow {
+  position: absolute;
+  top: 120px;
+  width: min(520px, 90vw);
+  height: min(520px, 90vw);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(57, 217, 138, 0.18), transparent 68%);
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.hero img {
+  position: relative;
+  width: clamp(170px, 24vw, 300px);
+  height: clamp(170px, 24vw, 300px);
+  border-radius: 50%;
+  border: 3px solid rgba(155, 225, 93, 0.45);
+  object-fit: cover;
+  box-shadow: 0 24px 70px rgba(57, 217, 138, 0.18);
+  animation: floatProfile 4s ease-in-out infinite;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  width: fit-content;
+  padding: 8px 16px;
+  border: 1px solid rgba(155, 225, 93, 0.22);
+  border-radius: 999px;
+  color: var(--leaf);
+  background: rgba(155, 225, 93, 0.08);
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.hero h1 {
+  width: min(980px, 94vw);
+  font-size: clamp(2.25rem, 6vw, 5.2rem);
+  font-weight: 800;
+  line-height: 1.08;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, var(--leaf), var(--green), var(--gold));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  width: min(720px, 92vw);
+  color: var(--muted);
+  font-size: clamp(1rem, 2.2vw, 1.32rem);
+  line-height: 1.75;
+}
+
+.hero-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.hero-connect,
+.hero-resume {
+  min-width: 170px;
+  padding: 15px 26px;
+  border-radius: 999px;
+  font-size: 1rem;
+  font-weight: 800;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.hero-connect {
+  color: #07130d;
+  background: linear-gradient(135deg, var(--leaf), var(--green));
+  box-shadow: 0 18px 42px rgba(57, 217, 138, 0.24);
+}
+
+.hero-resume {
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.hero-connect:hover,
+.hero-resume:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 24px 50px rgba(57, 217, 138, 0.22);
+}
+
+@keyframes floatProfile {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 125px 18px 64px;
+  }
+
+  .hero-action,
+  .hero-connect,
+  .hero-resume {
+    width: 100%;
+  }
+
+  .hero-connect,
+  .hero-resume {
+    max-width: 330px;
+  }
+}

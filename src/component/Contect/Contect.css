@@ -1,0 +1,117 @@
+.contact {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  text-align: center;
+  background: radial-gradient(circle at 80% 20%, rgba(57,217,138,0.12), transparent 30%);
+}
+
+.contact-title {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 64px;
+}
+
+.contact-title h1 {
+  position: relative;
+  z-index: 2;
+  font-size: clamp(2.2rem, 6vw, 5rem);
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--leaf), var(--green), var(--gold));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.contact-title img {
+  position: absolute;
+  right: -80px;
+  width: 170px;
+  opacity: 0.34;
+}
+
+.form {
+  width: min(100%, 560px);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: clamp(24px, 5vw, 42px);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.09), rgba(255,255,255,0.035));
+  backdrop-filter: blur(14px);
+  box-shadow: var(--shadow);
+  transition: 0.3s ease;
+}
+
+.form:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 28px 70px rgba(57, 217, 138, 0.14);
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 16px;
+  padding: 15px 16px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  resize: vertical;
+  transition: 0.25s ease;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: rgba(246, 255, 249, 0.55);
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: rgba(155, 225, 93, 0.55);
+  box-shadow: 0 0 0 4px rgba(57, 217, 138, 0.1);
+  transform: translateY(-2px);
+}
+
+.form button {
+  min-height: 52px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 999px;
+  color: #07130d;
+  background: linear-gradient(135deg, var(--leaf), var(--green));
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.form button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 42px rgba(57, 217, 138, 0.24);
+}
+
+.form-status {
+  color: var(--leaf);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 520px) {
+  .contact {
+    padding: 70px 16px;
+  }
+
+  .contact-title img {
+    right: -34px;
+    width: 120px;
+  }
+}
